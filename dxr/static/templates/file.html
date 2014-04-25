@@ -42,10 +42,18 @@
             <li>
               <a href="{{ href }}" title="{{ title }}" class="{{ icon }}">{{ title }}</a>
             </li>
-          {%- endfor %}
+            {%- endfor %}
+            <li>
+            <a href="javascript:ace.createEditSession(document.querySelectorAll('code');">Editor</a>
+            </li>
           </ul>
         {% endfor %}
-      </section>
+        </section>
+        <section id="panel-editor" aria-hidden="false">
+        <!--- MAGIC HERE ******* omg you guys-- > MAGIC 
+        </section>
+
+           
     </div>
   {% endif %}
 
