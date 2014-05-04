@@ -34,6 +34,23 @@
         <span class="navpanel-icon expanded" aria-hidden="false"></span>
         Navigation
       </button>
+	<script>
+window.hoye=function(){
+var e=document.createElement('div'); 
+e.innerText = " "; 
+e.id ='zarq';
+e.style.top="10%";
+e.style.left = "10%";
+e.style.width= "80%";
+e.style.height= "80%";
+e.style.position = "absolute";
+e.style.visibility = "visible";
+document.body.appendChild(e);
+var a = ace.edit('zarq'); 
+a.setValue(document.querySelectorAll('code'));
+}
+</script>
+
       <section id="panel-content" aria-expanded="true" aria-hidden="false">
         {% for section, items in sections %}
           <h4>{{ section }}</h4>
@@ -44,15 +61,11 @@
             </li>
             {%- endfor %}
             <li>
-            <a href="javascript:ace.createEditSession(document.querySelectorAll('code');">Editor</a>
+            <a href="javascript:hoye();">Editor</a>
             </li>
           </ul>
         {% endfor %}
         </section>
-        <section id="panel-editor" aria-hidden="false">
-        <!--- MAGIC HERE ******* omg you guys-- > MAGIC 
-        </section>
-
            
     </div>
   {% endif %}
