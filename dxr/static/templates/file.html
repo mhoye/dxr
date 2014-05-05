@@ -34,21 +34,6 @@
         <span class="navpanel-icon expanded" aria-hidden="false"></span>
         Navigation
       </button>
-	<script>
-window.hoye=function(){
-var e=document.createElement('div'); 
-e.innerText = " "; 
-e.id ='zarq';
-e.style.top="10%";
-e.style.left = "10%";
-e.style.width= "80%";
-e.style.height= "80%";
-e.style.position = "absolute";
-e.style.visibility = "visible";
-document.body.appendChild(e);
-var a = ace.edit('zarq'); 
-a.setValue(document.querySelectorAll('code'));
-}
 </script>
 
       <section id="panel-content" aria-expanded="true" aria-hidden="false">
@@ -61,7 +46,7 @@ a.setValue(document.querySelectorAll('code'));
             </li>
             {%- endfor %}
             <li>
-            <a href="javascript:hoye();">Editor</a>
+            <a href="javascript:mhEditWindow();">Editor</a>
             </li>
           </ul>
         {% endfor %}
@@ -112,4 +97,5 @@ a.setValue(document.querySelectorAll('code'));
   <script src="{{ wwwroot }}/static/js/panel.js"></script>
   <script src="{{ wwwroot }}/static/js/tree-selector.js"></script>
   <script src="{{ wwwroot }}/static/js/code-highlighter.js"></script>
+  <script src="{{ wwwroot }}/static/js/editor_infra.js"></script>	
 {% endblock %}
