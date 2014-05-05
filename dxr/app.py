@@ -230,3 +230,13 @@ def _html_file_path(tree_folder, url_path):
     else:
         # It's a file. Add the .html extension:
         return url_path + '.html'
+
+@dxr_blueprint.route('/<tree>/original/<path:path>')
+def get_original(tree, path=''):
+	comm = connect_db(join(current_app.instance_path, 'trees', tree))
+	original_file = comm.execute(""" SELECT trg_index_content.text from trg_index_content INNER JOIN files ON files.id=trg_index_content.id WHERE files.path=?
+        """, (path,));
+
+	return original_file;
+		
+	
