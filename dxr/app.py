@@ -237,6 +237,6 @@ def get_original(tree, path=''):
 	original_file = comm.execute(""" SELECT trg_index_content.text from trg_index_content INNER JOIN files ON files.id=trg_index_content.id WHERE files.path=?
         """, (path,));
 
-	return original_file;
+	return original_file.fetchall()[0][0];
 		
 	
